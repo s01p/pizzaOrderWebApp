@@ -1,0 +1,160 @@
+{% load static %}
+<html>
+    <head>
+           <title>order pizza Website</title>
+           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+           <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+           <link rel="stylesheet" href="{% static 'css/pizza.css' %}">
+           <link rel="stylesheet" href="{% static 'js/app.js' %}">
+           <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js">
+            alert("hi");
+           </script>
+    </head>
+    <body >
+           <div class="page-header">
+                
+                <p class="top-menu"> <a href="{% url 'index' %}" class="top-menu"><span class="glyphicon glyphicon-home"></span></a> </p>
+                {% if user.is_authenticated %}
+                         <p class="top-menu"> <a href="{% url 'logout' %}"><span class ="glyphicon glyphicon-log-out"></span></a> </p>
+                         <p class="top-menu"> <a href="{% url 'order_summary' %}" class="top-menu"><span class=".glyphicon glyphicon-align-justify"></span></a> </p>
+                         <a href="{% url 'shopcart' %}" class="top-menu"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                         <p class="top-menu"> <small>{{ user.username}}<span class="glyphicon glyphicon-user"></span></small> </p>
+                {% else %}
+                         
+                   <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-log-in"></span></a>
+                   <a href="{% url 'signup' %}" class="top-menu">Register</a>
+                {% endif %}
+
+                {% if user.is_superuser %}
+                     <p class="top-menu"><a href="{% url 'view_order' %}"><span class="glyphicon glyphicon-unchecked"></span></a></p>
+                     <p class="top-menu"><a href="{% url 'view_confirmed_order' %}"><span class="glyphicon glyphicon-check"></span></a> </p>
+                {% endif %} 
+                
+                 <h1><a href="/">THE PIZZA KING</a></h1>
+           </div>
+
+           <div class="content container">
+              <div class="row">
+                <div class="col-md-8">
+                   <div class="row">
+                       <div class="col-md-4">
+                            {% block content %}
+                
+                            {% endblock %}
+                       </div>
+                       <div class="col-md-4">
+                            {% block content1 %}
+                
+                            {% endblock %}
+                       </div>
+
+                   </div> 
+                    
+
+                </div>
+            <div class="col-md-4" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOcQPTjtkmsTxeMJO16FEitmgIRI1TELMzGM8N6Di7vbQe-ETOHg')">
+
+                 
+                    
+                    <h2>Important Announcement</h2>
+                    <ul>
+                        <li>Customise pizza your own way</li>
+                        <li>Get ready your pizza instantly</li>
+                        <li>Get pizza at lowest price</li>
+                        <li>Pizza for family party freinds</li>
+                        <li>Serve with pasta salads</li>
+                        <li>24X7 serviceble</li>
+                        <li>Home delivery applicable</li>
+                        <li>Home delivery require exra charge</li>
+                        <li>Fast delivery require more extra charge</li>
+                        <li>Cold drinks available</li>
+                        <li>extra space for party night</li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+                        <li>   </li>
+
+
+
+
+
+
+                    </ul>
+                    
+
+                </div>
+
+            </div>
+            
+        </div>
+    </body>
+</html>

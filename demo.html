@@ -1,0 +1,23 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+  <h1> SHOPPING CART </h1>
+  {% if flag == 0 %}
+    {% for a in item1 %}
+      <ul>
+        <li> <p> Product : {{ a.product_name|linebreaks }} </p> </li>
+           <ul>
+                 <li><p> Unit Price : {{ a.product_price|linebreaks }} </p></li>
+                 <li><p> QTY : {{ a.product_quantity|linebreaks}} </p></li>
+          </ul>
+     </ul>
+    {% endfor %}
+
+         <h2> TOTAL SUM : {{ sum }} </h2>
+         <h2> <a href="{% url 'checkout' sum=sum %}"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-mjTQ87MSJdOX59FaLtxEl2FdVrp6FyQJ69krt0-L7K3txO56" alt="CHECKOUT"></a>
+   {% else %}
+     <p><img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVc8vv-IsocxHmVQtzrn0iSOiHe_xZPDnmUi_dzb0_Gft6DYQe" alt ="CART EMPTY"></p>
+     <h2>{{ item1 }}</h2>
+   {% endif %}      
+{% endblock %}
+
+

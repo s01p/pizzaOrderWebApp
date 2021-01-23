@@ -1,0 +1,7 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+   <h2> Thankyou for shopping with us </h2>
+    <h2><a href = "{% url 'track_order' pk=obj.pk %}">Track Order</a></h2>  
+{% endblock %}
+
+

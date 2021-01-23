@@ -1,0 +1,30 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+<h2> CONFIRM ORDER </h2>
+{% for i in list  %}
+   
+   {{ i.customer_info.email }}
+   {{ i.customer_info.first_name }}
+   {{ i.customer_info.last_name }}
+   {{ i.customer_info.user_name }}
+   <br>
+   {{ i.shop_cart_info.date_of_checked_out }}
+   <br>
+   {% for j in i.cart_item %}
+     product name :  {{ j.product_name }}
+     product price :  {{ j.product_price }}
+     product quantity : {{ j.product_quantity }}
+     <br>
+   {% endfor %}
+<br>
+<br>
+<form method ="post" action="{% url 'confirm_order' pk=i.shop_cart_info.pk  %}" >{% csrf_token %}
+    <input type="checkbox" value="true" name="sunil" >Confirm Order</input>
+    <button type="submit">submit</button>
+</form>
+<br>
+<br>
+{% endfor %}
+       
+{% endblock %}
+

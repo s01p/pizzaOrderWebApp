@@ -1,0 +1,12 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+     <h2> Payment Detail  </h2>
+     <p>  sum : {{ sum }}  </p>
+     <p>  Delivery Charge : {{ delivery_charge }}  </p>
+     <p>  Tax : {{ tax }}  </p>
+     <p>  Total To Pay : {{ total }} </p>
+     <h2> <a href="{% url 'place_order' %}"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbHZmOYLOkM4tNxMgG7JqmYyGcWP7H_hAagyTGoxdNvDzFOX7T" alt="PLACE ORDER" > </a> </h2>
+       
+{% endblock %}
+
+<script src=""

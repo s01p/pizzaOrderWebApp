@@ -1,0 +1,62 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+     
+     {% for p in regularpizza  %}
+        <h1>REGULAR PIZZA</h1>
+        <p>{{ p.name }}</p>
+        <p>{{ p.description }}</p>
+        <p>small : {{ p.small }}</p>
+        <p>large : {{ p.large }}</p>
+        <p>prize small: {{ p.price_small }}</p>
+        <p>prize large : {{ p.price_large }}</p>
+        <h2> <a href="{% url 'add_to_cart' pk=p.pk label=1%}"> <img src="https://www.tipsandtricks-hq.com/ecommerce/wp-content/uploads/2009/10/green_matrix_add_to_cart.png" alt ="ADD TO CART"></a> </h2>
+        <h2> <a href="{% url 'customise' pk=p.pk label=1%}"> CUSTOMISE </a> </h2>
+     {% endfor %}
+
+     
+        {% for q in sicilianpizza  %}
+            <h1>SICILIAN PIZZA</h1>
+            <p>{{ q.name }}</p>
+            <p>{{ q.description } }</p>
+            <p>small : {{ q.small }}</p>
+            <p>large : {{ q.large }}</p>
+            <p>prize small: {{ q.price_small }}</p>
+            <p>prize large : {{ q.price_large }}</p>
+            <h2> <a href="{% url 'add_to_cart' pk=q.pk label=2 %}"><img src="https://www.tipsandtricks-hq.com/ecommerce/wp-content/uploads/2009/10/green_matrix_add_to_cart.png" alt ="ADD TO CART"></a> </h2>
+     
+        {% endfor %}
+     
+     {% for r in salads %}
+         <h1>salads</h1>
+         <p>{{ r.name }}</p>
+         <p>{{ r.description }}</p>
+         <p>small : {{ r.small }}</p>
+         <p>large : {{ r.large }}</p>
+         <p>prize small: {{ r.price_small }}</p>
+         <p>prize large : {{ r.price_large }}</p>
+         <h2> <a href="{% url 'add_to_cart' pk=r.pk label=3 %}"><img src="https://www.tipsandtricks-hq.com/ecommerce/wp-content/uploads/2009/10/green_matrix_add_to_cart.png" alt ="ADD TO CART">  </a> </h2>
+     
+     {% endfor %}
+       
+{% endblock %}
+
+
+{% block content1 %}
+     {% for p in regularpizza  %}
+        <img src="https://img.freepik.com/free-photo/top-view-pizza-detail_23-2148149176.jpg?size=626&ext=jpg" alt="pizza" width="500" height="400">
+     {% endfor %}  
+
+     {% for q in sicilianpizza  %}
+        <img src="https://d20vfb9mlfay8i.cloudfront.net/assets/images/header_images/squarz-pizza_hero.jpg" alt="pizza" width="500" height="350">
+  
+     {% endfor %}
+
+     {% for r in salads %}
+        <img src="https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="pizza" width="500" height="250">
+     
+     {% endfor %}
+     
+    
+   
+
+{% endblock %}

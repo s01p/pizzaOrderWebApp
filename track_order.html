@@ -1,0 +1,16 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+     
+     {% if flag == 0 %}
+             
+             <h2>Your Order Is Pending!!!</h2>
+     {% else %}
+             
+             <h2>Your Order Is Confirmed!</h2>      
+             
+             <h2>It will take approx. 35 minutes to reach you!!!</h2>
+     {% endif%}
+    
+   
+
+{% endblock %}

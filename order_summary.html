@@ -1,0 +1,26 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+<h2>  ORDER SUMMARY </h2>
+{% for i in list  %}
+   
+   {{ i.customer_info.email }}
+   {{ i.customer_info.first_name }}
+   {{ i.customer_info.last_name }}
+   {{ i.customer_info.user_name }}
+   <br>
+   {{ i.shop_cart_info.date_of_checked_out }}
+   <br>
+   {% for j in i.cart_item %}
+     product name :  {{ j.product_name }}
+     product price :  {{ j.product_price }}
+     product quantity : {{ j.product_quantity }}
+     <br>
+   {% endfor %}
+<br>
+<br>
+  
+<br>
+<br>
+{% endfor %}
+      <h2><a href = {% url 'view_order' %}>view order</a></h2>   
+{% endblock %}
